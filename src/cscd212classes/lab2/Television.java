@@ -14,6 +14,13 @@ public class Television implements Comparable<Television>
     public int getResolution() { return resolution; }
     public int getScreenSize() { return screenSize; }
 
+    public Television(final String model,
+                      final boolean smart, final int screenSize,
+                      final int resolution, final String make)
+    {
+        this(make, model, smart, screenSize, resolution);
+    }
+
     public Television(final String make, final String model,
                       final boolean smart, final int screenSize,
                       final int resolution)
