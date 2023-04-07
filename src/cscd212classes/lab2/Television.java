@@ -37,14 +37,13 @@ public class Television implements Comparable<Television>
         this.screenSize = screenSize;
         this.smart = smart;
 
-        fourK = (resolution == 2160);
+        this.fourK = (resolution == 2160);
     }
 
     @Override
-    public boolean equals(Object o)
+    public boolean equals(final Object o)
     {
         if (o == this) return true;
-        //if (o == null) return false;
         if (!(o instanceof Television t)) return false;
 
         return make.equals(t.getMake()) && model.equals(t.getModel()) &&
@@ -54,8 +53,8 @@ public class Television implements Comparable<Television>
     @Override
     public int hashCode()
     {
-        return make.hashCode() + model.hashCode() + resolution +
-                Boolean.hashCode(smart) + Boolean.hashCode(fourK);
+        return this.make.hashCode() + this.model.hashCode() + this.resolution +
+                Boolean.hashCode(this.smart) + Boolean.hashCode(this.fourK);
     }
 
     public String toString()
@@ -68,7 +67,7 @@ public class Television implements Comparable<Television>
     }
 
     @Override
-    public int compareTo(Television another)
+    public int compareTo(final Television another)
     {
         if (another == null)
             throw new IllegalArgumentException("null parameter in the compareTo method");
