@@ -1,4 +1,16 @@
 package cscd212comparators.lab2;
 
-public class TelevisionModelScreenSizeComparator {
+import cscd212classes.lab2.Television;
+import java.util.Comparator;
+
+public class TelevisionModelScreenSizeComparator implements Comparator<Television>
+{
+    @Override
+    public int compare(final Television t1, final Television t2)
+    {
+        if (t1 == null || t2 == null)
+            throw new IllegalArgumentException("null parameter in TelevisionModelScreenSizeComparator");
+
+        return t1.compareTo(t2);
+    }
 }
